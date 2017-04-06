@@ -17,6 +17,8 @@ RUN set -xe \
 VOLUME /home/aria2 /etc/aria2
 
 EXPOSE 6800
+
 CMD set -xe \
     && chown -R aria2:aria2 /home/aria2 \
+    && chown -R aria2:aria2 /etc/aria2 \
     && gosu aria2 aria2c --conf-path=/etc/aria2/aria2.conf 
